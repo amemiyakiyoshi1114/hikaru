@@ -33,6 +33,14 @@ const onSubmit = () => {
   onLoginSubmit(formInline.username,formInline.password)
   .then(res =>{
     console.log(res.data.data.id)
+    sessionStorage.setItem('loginUser', res.data);
+    console.log('ssession')
+    console.log(sessionStorage)
+  for (let i = 0; i < sessionStorage.length; i++) {
+    const key = sessionStorage.key(i);
+    const value = sessionStorage.getItem(key);
+    console.log(`Session Storage Key: ${key}, Value: ${value}`);
+}
     router.push('/hikaru')
   },err =>{
     console.log(err)
