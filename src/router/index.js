@@ -5,6 +5,10 @@ import ProjectListTable from '@/components/ProjectListTable.vue';
 import ProjecCreateForm from '@/components/ProjectCreateForm.vue';
 import ScenarioListTable from '@/components/ScenarioListTable.vue';
 import ScenarioCreateForm from '@/components/ScenarioCreateForm.vue';
+import AdministrationListTable from '@/components/AdministrationListTable.vue';
+import AdministrationCreateForm from '@/components/AdministrationCreateForm.vue';
+import AdministrationAdministrate from '@/components/AdministrationAdministrate.vue';
+import ReportListTable from '@/components/ReportListTable.vue';
 
 const routes = [
   {
@@ -21,6 +25,10 @@ const routes = [
       { path: '/project/create/',component:ProjecCreateForm},
       { path: '/scenario/list/',component:ScenarioListTable},
       { path: '/scenario/create/',component:ScenarioCreateForm},
+      { path: '/administration/list',component:AdministrationListTable},
+      { path: '/administration/create',component:AdministrationCreateForm},
+      { path: '/administration/administrate',component:AdministrationAdministrate},
+      { path: '/report/list',component:ReportListTable},
     ]
 
   },

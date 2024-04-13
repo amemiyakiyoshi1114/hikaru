@@ -1,6 +1,6 @@
 <template>
   <el-select
-    v-model="value"
+    v-model="selectValue"
     value-key="id"
     placeholder="Select"
     style="width: 240px"
@@ -44,14 +44,14 @@
 </div>
   <p>
     selected option's description:
-    {{ value ? value.id : "no select" }}
+    {{ selectValue ? selectValue.id : "no select" }}
   </p>
 </template>
 <script  setup>
 import { ref, onMounted } from "vue";
 import { onGetProjectList,onGetScenarioList } from "@/api/axios";
 
-const value = ref(null);
+const selectValue = ref(null);
 const options = ref([]);
 const totalProject = ref(1);
 const keyword = ref("");
@@ -110,7 +110,7 @@ async function getScenarioList(projectId,keyword, orderBy, pageNumber, pageSize)
 }
 const tableData = ref([]);
 const onSelect =() => {
-   getScenarioList(value.value.id,keyword.value,orderBy.value,currentPage.value,pageSize.value);
+   getScenarioList(selectValue.value.id,keyword.value,orderBy.value,currentPage.value,pageSize.value);
 };
 
 
@@ -118,7 +118,7 @@ const handleSizeChange = (val) => {
   pageSize.value = val;
   console.log(pageSize.value);
   getScenarioList(
-    value.value.id,
+    selectValue.value.id,
     keyword.value,
     orderBy.value,
     currentPage.value,
@@ -128,9 +128,9 @@ const handleSizeChange = (val) => {
 const handleCurrentChange = (val) => {
   //console.log(`current page: ${val}`);
   currentPage.value = val;
-  console.log(currentPage.value);
+  console.log(selectValue.value);
   getScenarioList(
-    value.value.id,
+    selectValue.value.id,
     keyword.value,
     orderBy.value,
     currentPage.value,

@@ -15,7 +15,7 @@
               </el-dropdown-menu>
             </template>
           </el-dropdown>
-          <span>Tom</span>
+          <p>hikaru</p>
         </div>
       </el-header>
       <el-container>
@@ -53,11 +53,11 @@
                 </template>
                 <el-menu-item-group>
                   <template #title>view</template>
-                  <el-menu-item index="3-1">list</el-menu-item>
+                  <el-menu-item index="/administration/list">list</el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="change">
-                  <el-menu-item index="3-2">create</el-menu-item>
-                  <el-menu-item index="3-3">administrate</el-menu-item>
+                  <el-menu-item index="/administration/create">create</el-menu-item>
+                  <el-menu-item index="/administration/administrate">administrate</el-menu-item>
                 </el-menu-item-group>               
               </el-sub-menu>
               <el-sub-menu index="4">
@@ -66,7 +66,7 @@
                 </template>
                 <el-menu-item-group>
                   <template #title>view</template>
-                  <el-menu-item index="4-1">list</el-menu-item>
+                  <el-menu-item index="/report/list">list</el-menu-item>
                 </el-menu-item-group>            
               </el-sub-menu>
             </el-menu>
